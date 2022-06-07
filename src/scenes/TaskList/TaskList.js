@@ -16,7 +16,7 @@ useEffect(() => {
   if (!token){
     navigate("/auth"); //cuando no exista el token, va a redirigir al inicio de sesión
   }
-}, [token])
+}, [navigate, token])
 
 useEffect(() => {
     setLoader(true); //inicia como true para que veas que algo está cargando
@@ -28,7 +28,7 @@ useEffect(() => {
       .catch((err) => {
         console.log(err)
       })
-}, [])
+}, [token])
 
 // ## OPCIONES PARA AGREGAR TAREA (POST)
 //Opt1 - Bajar todas las tareas otra vez (si el backend no responde la tarea) (MENOS EFICIENTE)
